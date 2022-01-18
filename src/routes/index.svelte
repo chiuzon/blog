@@ -17,10 +17,12 @@
 </script>
 <script lang="ts">
 import PostElement from "$lib/components/PostElement.svelte";
+import Seo from "$lib/components/SEO.svelte";
 
 export let posts;
-
 </script>
+
+<Seo pageName="Home" />
 
 <h1 class="text-xl font-light">Posts</h1>
 <hr class="mt-2 mb-5 border-opacity-50 border-gray-200" />

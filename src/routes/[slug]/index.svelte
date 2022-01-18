@@ -1,8 +1,6 @@
 <script context="module" lang="ts">
     const allposts = import.meta.globEager(`/posts/*.md`)
 
-    console.log(allposts)
-
     let posts: {post: any, slug: string}[] = []
 
     for (let path in allposts){
@@ -26,26 +24,24 @@
     }
 </script>
 <script lang="ts">
-    import { onMount } from "svelte";
-
+    import Seo from "$lib/components/SEO.svelte";
+    import ShareComponent from "$lib/components/ShareComponent.svelte";
+    
     export let post;
 
-    $: title = post.post.metadata.title
-    $: link = ''
-
-    onMount(() => {
-        link = window.location.href
-    })
+    $: title = post.post.metadata.title || ''
+    $: slug = post.post.metadata.slug || ''
 </script>
 
+<Seo pageName="{title}" />
 
 <div class="flex flex-col">
-    <h1 class="text-4xl font-bold mb-6 border-b py-3">{title}</h1>
+    <h1 class="text-5xl font-bold mb-6 border-b py-3">{title}</h1>
     <article class="prose prose-xl">
         <svelte:component this={post.post.default} />
     </article>
 
-    <div class="border-t p-1 m-1">
-        {link}
+    <div class="border-t p-1 m-1 flex justify-end">
+        <ShareComponent slug={slug} />
     </div>
 </div>

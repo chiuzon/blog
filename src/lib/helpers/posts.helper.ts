@@ -6,7 +6,7 @@ for (const path in imports) {
 	if (post) {
 		posts.push({
 			metadata: post.metadata,
-			render: post.default.render()
+			render: JSON.stringify(post.default.render())
 		});
 	
 	}

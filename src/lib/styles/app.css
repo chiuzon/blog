@@ -6,4 +6,8 @@
     body {
         @apply font-mono;
     }
+
+    kbd {
+        @apply bg-gray-900 shadow-lg p-1 rounded-md text-white text-sm align-middle;
+    }
 }

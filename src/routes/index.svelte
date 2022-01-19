@@ -22,7 +22,7 @@ import Seo from "$lib/components/SEO.svelte";
 export let posts;
 </script>
 
-<Seo pageName="Home" />
+<Seo pageName="Home"  />
 
 <h1 class="text-xl font-light">Posts</h1>
 <hr class="mt-2 mb-5 border-opacity-50 border-gray-200" />
@@ -30,8 +30,10 @@ export let posts;
 {#if posts.length <= 0}
     <h1 class="text-3xl text-center text-gray-900 text-opacity-40 p-5">No posts 😭</h1>
 {:else}
-    {#each posts as post}
-        <PostElement post={post} />
-    {/each}
+    <div class="gap-2 flex flex-col">
+        {#each posts as post}
+            <PostElement post={post} />
+        {/each}
+    </div>
 {/if}
 

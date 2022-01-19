@@ -31,12 +31,16 @@
 
     $: title = post.post.metadata.title || ''
     $: slug = post.post.metadata.slug || ''
+    $: description = post.post.metadata.description || ''
+    $: date = new Date(post.post.metadata.date).toString().substring(0, 16) || '...'
 </script>
 
-<Seo pageName="{title}" />
+<Seo pageName="{title}" description="{description}" keywords={slug} />
 
 <div class="flex flex-col">
-    <h1 class="text-5xl font-bold mb-6 border-b py-3">{title}</h1>
+    <h1 class="text-5xl font-bold py-1">{title}</h1>
+    <h2 class="text-sm font-semibold py-2">{date}</h2>
+    <hr class="mb-5" />
     <article class="prose prose-xl">
         <svelte:component this={post.post.default} />
     </article>

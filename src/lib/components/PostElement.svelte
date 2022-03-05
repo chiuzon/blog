@@ -5,7 +5,7 @@
     $: title = post.metadata.title || '...'
     $: description = post.metadata.description || ''
     $: slug = post.metadata.slug || ''
-   console.log(post)
+
 </script>
 
 {#if post.metadata}

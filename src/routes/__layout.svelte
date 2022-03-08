@@ -1,30 +1,27 @@
 <script lang="ts">
-    import '$lib/styles/app.css';
+	import '$lib/styles/app.css';
 
-    import blogInfo from '$lib/constants/blogInfo';
+	let dropdownStatus = false;
 </script>
 
-<div class="w-full flex justify-center border ">
-    <div class="flex flex-col lg:flex-row justify-between items-center py-5 w-full lg:w-1/2">
-        <div class="text-2xl font-bold">
-            <a href="/">{blogInfo.BLOG_NAME}</a>
-        </div>
-    
-        <div class="">
-            <ul class="list-none flex justify-center gap-3 text-lg font-medium">
-                <li class="p-1">
-                    <a href="https://github.com/chiuzon" class=" text-gray-800 hover:text-gray-400">
-                        <span class="text-xs lg:text-lg align-top">📦</span> Github</a>
-                </li>
-                <li class="p-1">
-                    <a href="https://twitter.com/chiuzon" class=" text-gray-800 hover:text-gray-400">
-                        <span class="text-xs lg:text-lg align-top">💬</span> Twitter</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<div class="flex min-h-screen ">
+	<div
+		class=" bg-dark w-60 h-screen flex flex-col items-stretch p-2 border-r border-r-fg overflow-y-auto "
+	>
+		<h1 class="font-extrabold text-3xl break-words text-fg">Promotheus</h1>
 
-<div class="container mx-auto lg:mx-16  xl:mx-36 2xl:mx-56 p-10">
-    <slot />
+		<div class="py-5">
+			<ul class="w-full flex flex-col gap-1">
+				<li class="w-full flex flex-col items-stretch">
+					<a href="/" class="text-fg py-1 px-1 text-2xl  hover:border-fg hover:border-l-4"
+						>00. Home</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="bg-dark flex-1 p-2 w-full h-full overflow-y-">
+		<slot />
+	</div>
 </div>

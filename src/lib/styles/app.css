@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply font-mono;
-    }
+	body {
+		@apply font-mono;
+		@apply text-white;
+		@apply bg-dark;
+		@apply h-full;
+	}
 
-    kbd {
-        @apply bg-gray-900 shadow-lg p-1 rounded-md text-white text-sm align-middle;
-    }
+	kbd {
+		@apply bg-gray-900 shadow-lg p-1 rounded-md text-white text-sm align-middle;
+	}
 }
